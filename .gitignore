@@ -39,3 +39,4 @@ out/
 
 ### IP 주소 관련 설정 파일 ###
 src/main/resources/static/config.js
+src/main/resources/application-config.yml
