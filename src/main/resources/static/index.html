@@ -18,12 +18,12 @@
 
 <div class="result" id="result"></div>
 
-<script src="config.js"></script>
+<!--<script src="config.js"></script>-->
 
 <script>
     async function shortenUrl() {
         const urlInput = document.getElementById("originalUrl").value;
-        const response = await fetch(`${config.baseUrl}/api/shorten`, {
+        const response = await fetch(`/api/shorten`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ url: urlInput })

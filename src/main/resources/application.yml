@@ -4,7 +4,10 @@ spring:
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/shorten-url-service?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul
+    #DB Server 의 ip add + 3306 port 로 연결을 해야 함.
+    #backend Server -> DB Server
+
+    url: jdbc:mysql://localhost:3306/shorten_url_service
     username: root
     password: 12345678
 

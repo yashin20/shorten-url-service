@@ -13,6 +13,7 @@ import java.util.Map;
 import java.util.Optional;
 
 @RestController
+@RequestMapping("/api")
 @RequiredArgsConstructor
 public class UrlController {
 
@@ -21,11 +22,12 @@ public class UrlController {
     @Value("${server.base-url}") //설정 파일(application.yml)에서 값 가져오기
     private String baseUrl;
 
-    @PostMapping("/api/shorten")
+//    @CrossOrigin(origins = "nginx's ip address")
+    @PostMapping("/shorten")
     public ResponseEntity<Map<String, String>> shortenUrl(@RequestBody Map<String, String> request) {
         String originalUrl = request.get("url");
         String shortKey = urlService.shortenUrl(originalUrl);
-        return ResponseEntity.ok(Map.of("shortUrl", baseUrl + "/u/" + shortKey));
+        return ResponseEntity.ok(Map.of("shortUrl", baseUrl + "/api/u/" + shortKey));
     }
 
     @GetMapping("/u/{shortKey}")
